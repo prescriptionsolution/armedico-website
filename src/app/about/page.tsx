@@ -7,7 +7,7 @@ import Link from "next/link";
 import { 
   Target, Eye, Award, TrendingUp, CheckCircle2, XCircle, 
   ArrowRight, ArrowDown, BrainCircuit, Stethoscope, Video, 
-  BarChart3, ShieldCheck, Globe2, Smartphone, Network, GraduationCap 
+  BarChart3, ShieldCheck, Globe2, Smartphone, Network, GraduationCap ,Layout,
 } from "lucide-react";
 
 // ==================== 1. TYPE DEFINITIONS ====================
@@ -61,40 +61,46 @@ const itemVariants: Variants = {
 // Note: Removed 'className="text-teal-500"' from icons here to allow hover effects in the component
 const CORE_OBJECTIVES = [
   {
-    title: "AI Prescription Engine",
-    description: "Smart AI that suggests medications based on history, detecting drug interactions and dosage errors in real-time.",
+    title: "Smart Prescription Engine",
+    description: "Create digital prescriptions with built-in safety checks, including drug–drug and drug–food interaction alerts.",
     icon: <BrainCircuit size={32} />, 
-    source_ref: "AI-Powered Diagnostics"
+   
   },
   {
-    title: "AR Medical Visualization",
-    description: "Augmented Reality tools for surgeons and students to visualize complex anatomy and patient data in 3D space.",
+    title: "Patient Management System",
+    description: "Manage patient records, medical history, and treatment data in a structured and accessible way.",
     icon: <Eye size={32} />, 
-    source_ref: "AR Immersive Tech"
+    
   },
   {
-    title: "Digital E-Prescriptions",
-    description: "Paperless prescription management with secure digital signatures and direct pharmacy integration.",
+    title: "Digital Prescription Workflow",
+    description: "Generate, store, print, and share prescriptions securely with real-time access across devices.",
     icon: <Stethoscope size={32} />, 
-    source_ref: "Digital Rx Management"
+    
   },
   {
-    title: "VR Surgical Training",
-    description: "Virtual Reality simulations allowing practitioners to practice procedures in a risk-free digital environment.",
+    title: "Multi-Role Access Control",
+    description: "Role-based dashboards for hospitals, clinics, doctors, and receptionists.",
     icon: <Globe2 size={32} />, 
     source_ref: "VR Simulation"
   },
   {
-    title: "Predictive Health AI",
-    description: "Machine learning models that analyze patient trends to predict potential health risks before they occur.",
+    title: "Custom Prescription Templates",
+    description: "Create personalized layouts with headers, branding, and clinical structure.",
     icon: <BarChart3 size={32} />, 
     source_ref: "AI Data Intelligence"
   },
   {
-    title: "Smart Pharmacy Sync",
-    description: "Automated network connecting clinics to pharmacies for instant medication availability checks and fulfillment.",
+    title: "Smart Prescription Intelligence",
+    description: "Detect drug–drug and drug–food interactions in real-time to improve patient safety.",
     icon: <Network size={32} />, 
     source_ref: "Interoperability"
+  },
+  {
+    title: "Secure & Scalable Architecture",
+    description: "Built with modern backend systems ensuring data integrity and performance.",
+    icon: <GraduationCap size={32} />, 
+    source_ref: "Education & XR"
   },
   {
     title: "Voice-to-Prescription",
@@ -103,16 +109,10 @@ const CORE_OBJECTIVES = [
     source_ref: "AI Voice Interface"
   },
   {
-    title: "Bio-Metric Security",
-    description: "Blockchain and AI-driven security layers to protect sensitive medical data and digital identity.",
+    title: "Offline-First System",
+    description: "Continue working without internet. Sync data automatically when back online.",
     icon: <ShieldCheck size={32} />, 
     source_ref: "Data Security"
-  },
-  {
-    title: "Mixed Reality Anatomy",
-    description: "Educational platforms using MR to provide holographic training for medical professionals and students.",
-    icon: <GraduationCap size={32} />, 
-    source_ref: "Education & XR"
   }
 ];
 
@@ -126,7 +126,7 @@ const MANAGEMENT_BOARD = [
    {
     name: "Rashmi A Kanchagar",
     role: "Project Manager",
-    image: "/Rashmi A Kanchagar.jpg", 
+    image: "/Rashmi A Kanchagar.jpeg", 
     bio: "Managing the development lifecycle of AI-driven prescription modules and cross-platform integration."
   },
   {
@@ -166,9 +166,9 @@ const MANAGEMENT_BOARD = [
     bio: "Specializing in building high-performance AR and VR interfaces for next-gen medical visualization."
   },
   {
-    name: "Arjun Mehra",
+    name: "Pareeneeta",
     role: "Cybersecurity Lead",
-    image: "/Arjun Mehra.jpg",
+    image: "/Pareeneeta.jpeg",
     bio: "Implementing AI-based threat detection to protect the digital prescription ecosystem from breaches."
   },
   {
@@ -178,25 +178,20 @@ const MANAGEMENT_BOARD = [
     bio: "Conducting rigorous testing on AR/VR modules to ensure glitch-free performance in surgical settings."
   },
   {
-    name: "Karan Malhotra",
+    name: "Riya Singh",
     role: "Backend Architect",
     image: "/Karan Malhotra.jpg",
     bio: "Developing the secure, high-speed API network that powers instant digital prescription transfers."
   },
-  {
-    name: "Sneha Reddy",
-    role: "Product Strategist",
-    image: "/Sneha Reddy.jpg",
-    bio: "Aligning AR Medico's technology roadmap with the evolving needs of the global digital health market."
-  }
+  
 ];
 
 const ADVISORY_BOARD = [
   {
-    name: "Dr. Shashikant P Chaudhary",
-    role: "Professor & HOD Dermatology",
-    image: "/Dr. Shashikant P Chaudhary.jpg",
-    bio: "Advising on the use of AI for skin analysis and digital dermatological prescriptions."
+    name: "Uday Pratap Singh",
+    role: "Senior Advocate Patna High Court",
+    image: "/Uday Pratap Singh.jpeg",
+    bio: "Advising on legal frameworks for AI healthcare and digital medical data regulations."
   },
   {
     name: "Dr. Shashidhar Shreeniwas",
@@ -211,12 +206,38 @@ const ADVISORY_BOARD = [
     bio: "Strategic advisor for VR-based cancer diagnostic and educational visualization modules."
   },
   {
-    name: "Dr. Shashank Shourabh",
-    role: "MBBS, DNB General Surgery",
-    image: "/Dr. Shashank Shourabh.jpg",
+    name: "Dr. Naveen",
+    role: "AI Advisor",
+    image: "/Naveen.jpeg",
     bio: "Evaluating the practical surgical application of AR Medico’s immersive technology suite."
-  }
+  },
+  {
+    name: "Shashi Mohan Sharma",
+    role: "Pharmaceutical Quality & Compliance",
+    image: "/Shashi Mohan Sharma.png",
+    bio: "Seasoned industry leader with 30+ years of expertise in pharmaceutical quality systems, regulatory compliance, and audit excellence, driving world-class standards and operational integrity"
+  },
+  {
+    name: "Chaitanya Sharma",
+    role: "IIT Rourkie, IIM Kolkata Management Consultant",
+    image: "/Chaitanya Sharma.jpeg",
+    bio: "Strategic consulting on business scaling and technology adoption in healthcare markets."
+  },
+  {
+    name: "Nimisha Sharma",
+    role: "Media Planning & Advertising Expert",
+    image: "/Nimisha Sharma.jpeg",
+    bio: "Leading brand awareness and digital outreach strategies for immersive medical platforms."
+  },
+  {
+    name: "Dr. Vikram Seth",
+    role: "Neurosurgeon",
+    image: "/Dr-Vikram-Seth.jpg",
+    bio: "Advising on high-precision Mixed Reality tools for complex neurosurgical navigation."
+  },
+  
 ];
+
 
 // ==================== COMPONENT ====================
 
@@ -248,8 +269,8 @@ export default function About() {
             </motion.span>
             
             <motion.h1 variants={itemVariants} className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
-              AI-Driven Care. <br className="hidden md:block" />
-              <span className="text-teal-400">AR-Enhanced Precision.</span>
+             Smart Prescription. <br className="hidden md:block" />
+              <span className="text-teal-400">AI-Driven Care.</span>
             </motion.h1>
           </motion.div>
         </div>
@@ -303,8 +324,9 @@ export default function About() {
                   <Award size={32} />
                 </div>
                 <div>
-                  <p className="text-slate-900 font-bold text-lg">Next-Gen Tech</p>
-                  <p className="text-slate-500 text-sm">Certified AI/VR Modules</p>
+                  <p className="text-slate-900 font-bold text-lg">Next-Gen Healthcare</p>
+                  <p className="text-slate-500 text-sm">
+AI Safety Enabled System</p>
                 </div>
               </div>
             </div>
@@ -322,22 +344,22 @@ export default function About() {
                 <span className="w-8 h-0.5 bg-teal-600"></span> Leading Innovation
               </span>
               <h2 className="text-3xl md:text-5xl font-bold text-slate-900 leading-tight">
-                Transforming Medicine with <span className="text-teal-600">AI & Immersive Reality</span>
+                Transforming Medicine with <span className="text-teal-600">Smart Prescriptions & AI Safety</span>
               </h2>
             </div>
             
             <p className="text-slate-600 text-lg leading-relaxed">
-              At AR Medico, we believe the future of healthcare is intelligent and immersive. We aren't just building software; we are building an ecosystem where Artificial Intelligence assists in every diagnosis and Augmented Reality guides every procedure.
+             At AR Medico, we are building a smarter way to manage healthcare through digital prescriptions and intelligent safety checks. Our platform helps doctors and clinics streamline patient records, prescriptions, and daily workflows while ensuring safer treatments with AI-based drug interaction analysis.
             </p>
             <p className="text-slate-600 text-lg leading-relaxed">
-              Our core mission is to empower medical professionals with a digital prescription engine that thinks with them and AR/VR tools that let them see beyond the surface. We are bridge-builders between high-tech labs and real-world clinics.
+              Our mission is to empower medical professionals with a reliable digital prescription system that enhances efficiency, accuracy, and patient care. We focus on simplifying clinical workflows while maintaining secure and structured healthcare data.
             </p>
 
             <ul className="space-y-3 pt-2">
               {[
-                "AI-optimized clinical decision support for Rxs.",
-                "Immersive VR/AR environments for surgical precision.",
-                "Secure, paperless prescription infrastructure."
+                "AI-based drug interaction checks.",
+                "Secure digital prescription system",
+                "Structured patient record management"
               ].map((item, idx) => (
                 <li key={idx} className="flex items-start gap-3 text-slate-800 font-medium">
                   <CheckCircle2 className="text-teal-500 flex-shrink-0 mt-1" size={20} />
@@ -360,7 +382,7 @@ export default function About() {
                     transition={{ duration: 0.6 }}
                 >
                     <span className="text-teal-600 font-bold uppercase tracking-widest text-sm">Our Ecosystem</span>
-                    <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mt-3 mb-6">AI & XR Capabilities</h2>
+                    <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mt-3 mb-6">Core Platform Capabilities</h2>
                     <p className="text-slate-500 text-lg">
                     We specialize in high-impact medical technologies designed for the next generation of hospitals.
                     </p>
@@ -387,16 +409,14 @@ export default function About() {
                         
                         <h3 className="text-xl font-bold text-slate-900 mb-3">{obj.title}</h3>
                         <p className="text-slate-600 leading-relaxed mb-4">{obj.description}</p>
-                        <div className="text-xs font-bold text-slate-400 uppercase tracking-wide border-t border-slate-100 pt-4">
-                            Module: {obj.source_ref}
-                        </div>
+                       
                     </motion.div>
                 ))}
             </div>
         </div>
       </section>
 
-      {/* ==================== ADVISORY BOARD ==================== */}
+     {/* ==================== ADVISORY BOARD ==================== */}
       <section className="pt-24 pb-12 container mx-auto px-6">
         <div className="text-center max-w-3xl mx-auto mb-16">
             <motion.div
@@ -406,7 +426,7 @@ export default function About() {
                 transition={{ duration: 0.6 }}
             >
                 <span className="text-blue-600 font-bold uppercase tracking-widest text-sm">Strategic Insight</span>
-                <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mt-3 mb-6">Medical Advisory</h2>
+                <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mt-3 mb-6">Members of Honorary Advisory Panel</h2>
                 <p className="text-slate-500 text-lg">
                 Renowned medical experts ensuring our AI and AR tools align with clinical reality.
                 </p>
@@ -418,18 +438,17 @@ export default function About() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12"
+            className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8"
         >
             {ADVISORY_BOARD.map((member, idx) => (
             <motion.div 
                 key={idx} 
                 variants={itemVariants}
-                className="group relative bg-white/50 rounded-3xl p-8 text-center border border-slate-200 hover:bg-white hover:border-blue-200 hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
+                className="group relative bg-white/50 rounded-3xl p-6 text-center border border-slate-200 hover:bg-white hover:border-blue-200 hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
             >
-                <div className="relative w-40 h-40 mx-auto mb-6">
+                <div className="relative w-32 h-32 mx-auto mb-6">
                     <div className="absolute inset-0 rounded-full border-4 border-slate-200 group-hover:border-blue-500 transition-colors duration-300 transform group-hover:scale-105"></div>
                     <div className="w-full h-full rounded-full overflow-hidden relative shadow-md bg-slate-200">
-                        {/* Using Custom MemberPhoto with Fallback */}
                         <MemberPhoto 
                             src={member.image} 
                             fallback="/doctorplaceholder.png" 
@@ -439,9 +458,9 @@ export default function About() {
                     </div>
                 </div>
 
-                <h3 className="text-xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors">{member.name}</h3>
-                <p className="text-blue-500 font-bold uppercase tracking-wide text-xs mt-2 mb-4">{member.role}</p>
-                <p className="text-slate-500 text-sm leading-relaxed">{member.bio}</p>
+                <h3 className="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors leading-tight">{member.name}</h3>
+                <p className="text-blue-500 font-bold uppercase tracking-wide text-[10px] mt-2 mb-4">{member.role}</p>
+                <p className="text-slate-500 text-xs leading-relaxed line-clamp-3 group-hover:line-clamp-none transition-all duration-300">{member.bio}</p>
             </motion.div>
             ))}
         </motion.div>
@@ -480,7 +499,6 @@ export default function About() {
                 <div className="relative w-40 h-40 md:w-44 md:h-44 mx-auto mb-6">
                     <div className="absolute inset-0 rounded-full border-4 border-teal-500/20 group-hover:border-teal-500 transition-colors duration-300 transform group-hover:scale-105 z-10"></div>
                     <div className="w-full h-full rounded-full overflow-hidden relative shadow-lg bg-slate-100">
-                        {/* Using Custom MemberPhoto with Fallback */}
                         <MemberPhoto 
                             src={member.image} 
                             fallback="/teamplaceholder.jpeg"
@@ -498,12 +516,14 @@ export default function About() {
         </motion.div>
       </section>
 
+
+
       {/* ==================== WHY WE STARTED ==================== */}
       <section className="py-20 bg-white border-y border-slate-200">
         <div className="container mx-auto px-6">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <span className="text-teal-600 font-bold uppercase tracking-widest text-sm">The Evolution</span>
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mt-3">Why AI & AR?</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mt-3">Our Vision: AI & AR in Healthcare</h2>
             <p className="text-slate-500 mt-4 text-lg">Overcoming the limitations of analog healthcare through deep technology.</p>
           </div>
 
@@ -520,15 +540,15 @@ export default function About() {
                <ul className="space-y-4">
                  <li className="flex gap-4 text-red-800/80">
                    <div className="w-1.5 h-1.5 bg-red-400 rounded-full mt-2 shrink-0" />
-                   Manual prescription errors and drug interaction risks.
+                   Manual prescription errors and limited interaction checks 
                  </li>
                  <li className="flex gap-4 text-red-800/80">
                    <div className="w-1.5 h-1.5 bg-red-400 rounded-full mt-2 shrink-0" />
-                   Lack of 3D anatomical visualization during surgery.
+                   Fragmented patient records and workflows  
                  </li>
                  <li className="flex gap-4 text-red-800/80">
                    <div className="w-1.5 h-1.5 bg-red-400 rounded-full mt-2 shrink-0" />
-                   Reactive care instead of AI-based predictive analytics.
+                   Limited visualization during complex procedures
                  </li>
                </ul>
             </motion.div>
@@ -550,15 +570,15 @@ export default function About() {
                <ul className="space-y-4">
                  <li className="flex gap-4 text-teal-900/80">
                    <div className="w-1.5 h-1.5 bg-teal-500 rounded-full mt-2 shrink-0" />
-                   AI-validated prescriptions for maximum patient safety.
+                  Smart prescription systems with interaction safety checks 
                  </li>
                  <li className="flex gap-4 text-teal-900/80">
                    <div className="w-1.5 h-1.5 bg-teal-500 rounded-full mt-2 shrink-0" />
-                   Real-time AR overlays for intraoperative guidance.
+                   Digital workflows replacing manual processes  
                  </li>
                  <li className="flex gap-4 text-teal-900/80">
                    <div className="w-1.5 h-1.5 bg-teal-500 rounded-full mt-2 shrink-0" />
-                   Predictive models that save lives through early detection.
+                   AR-enabled medical visualization and AI-assisted healthcare
                  </li>
                </ul>
             </motion.div>
@@ -582,9 +602,13 @@ export default function About() {
               <div className="w-16 h-16 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center shadow-sm mb-8 group-hover:bg-blue-600 group-hover:text-white transition-all">
                 <Eye className="w-8 h-8" />
               </div>
-              <h3 className="text-3xl font-bold text-slate-900 mb-4">The VR Vision</h3>
+              <h3 className="text-3xl font-bold text-slate-900 mb-4">The Future of AR in Healthcare</h3>
               <p className="text-slate-600 text-lg leading-relaxed">
-                To bridge the gap between human expertise and machine intelligence, creating a healthcare environment where every surgeon has AR sight and every doctor has AI insight.
+                We envision a future where human expertise is enhanced by intelligent systems — 
+where doctors are supported by AI insights and AR-assisted visualization helps 
+simplify complex medical understanding.
+
+Our goal is to bridge clinical decision-making with next-generation technology.
               </p>
             </motion.div>
 
@@ -592,19 +616,19 @@ export default function About() {
               <div className="w-16 h-16 bg-slate-800 text-teal-400 rounded-2xl flex items-center justify-center shadow-inner mb-8 group-hover:bg-teal-500 group-hover:text-white transition-all">
                 <Target className="w-8 h-8" />
               </div>
-              <h3 className="text-3xl font-bold mb-6">Our Tech Mission</h3>
+              <h3 className="text-3xl font-bold mb-6">Our Technology Mission</h3>
               <ul className="space-y-4 text-slate-300">
                 <li className="flex gap-4 items-center group-hover:translate-x-2 transition-transform">
                   <span className="w-2 h-2 bg-teal-400 rounded-full"></span> 
-                  Scale AR/VR diagnostic tools to every hospital.
+                 Build intelligent prescription systems with advanced safety checks
                 </li>
                 <li className="flex gap-4 items-center group-hover:translate-x-2 transition-transform delay-75">
                   <span className="w-2 h-2 bg-teal-400 rounded-full"></span> 
-                  Eliminate prescription errors via AI validation.
+                 Enable future-ready AR/VR healthcare tools for better visualization  
                 </li>
                 <li className="flex gap-4 items-center group-hover:translate-x-2 transition-transform delay-100">
                   <span className="w-2 h-2 bg-teal-400 rounded-full"></span> 
-                  Pioneer secure bio-tech data standards.
+                  Continuously improve clinical workflows through smart automation  
                 </li>
               </ul>
             </motion.div>
@@ -621,18 +645,16 @@ export default function About() {
          <div className="container mx-auto px-6 relative z-10 text-center">
             <h2 className="text-3xl md:text-5xl font-bold mb-6">Innovate Your Practice</h2>
             <p className="text-slate-300 text-lg max-w-2xl mx-auto mb-10">
-               Step into the future of immersive healthcare. Let’s build the intelligent clinic, together.
+               Build a smarter, faster, and more connected healthcare system.
+From digital prescriptions to intelligent clinical workflows — everything in one platform.
             </p>
             
-            <Link href="/contact">
-              <motion.button 
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-teal-500 text-white px-10 py-5 rounded-full font-bold text-lg shadow-lg hover:bg-teal-400 transition-colors flex items-center gap-2 mx-auto"
-              >
-                 Partner With Us <TrendingUp size={22} />
-              </motion.button>
-            </Link>
+           
+             <Link href="/contact">
+  <button className="px-8 py-4 bg-teal-500 hover:bg-teal-400 text-white font-bold rounded-full flex items-center gap-2 mx-auto">
+    <Layout size={20} /> Partner With Us 
+  </button>
+</Link>
          </div>
       </section>
 

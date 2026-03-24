@@ -8,21 +8,19 @@ import { Menu, X, ChevronRight, User, ChevronDown, Sparkles, Activity, BarChart3
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isServicesOpen, setIsServicesOpen] = useState(false); 
-  const [isFeaturesOpen, setIsFeaturesOpen] = useState(false); // New State for Features
+  const [isServicesOpen, setIsServicesOpen] = useState(false); // Used for the new Services (Mega Menu)
   const pathname = usePathname();
 
   const LOGIN_URL = "https://dashboard.armedico.com";
   const SIGNUP_URL = "https://dashboard.armedico.com/signup";
 
-  // Note: "Features" ko yahan se hata kar alag handle kiya hai
   const navLinks = [
     { name: "Home", href: "/" },
     { name: "About", href: "/about" },
   ];
 
-  // --- Features Menu Data Structure ---
-  const featureCategories = [
+  // --- Services Menu Data (Formerly Features) ---
+  const serviceCategories = [
     {
       title: "Clinical & Admin",
       icon: <Activity className="w-4 h-4 text-teal-600"/>,
@@ -55,10 +53,12 @@ const Header = () => {
     }
   ];
 
-  const serviceLinks = [
+  /* COMMENTED OUT OLD SERVICE LINKS
+  const oldServiceLinks = [
     { name: "Healthcare Provider", href: "/services/healthcare-provider" },
     { name: "Order Medicine", href: "/services/order-medicine" },
   ];
+  */
 
   return (
     <header className="w-full bg-slate-50 border-b border-gray-200 relative z-50 font-sans">
@@ -91,21 +91,21 @@ const Header = () => {
               </Link>
             ))}
 
-            {/* === FEATURES DROPDOWN (NEW) === */}
+            {/* === SERVICES MEGA-MENU (Formerly Features) === */}
             <div 
               className="relative group"
-              onMouseEnter={() => setIsFeaturesOpen(true)}
-              onMouseLeave={() => setIsFeaturesOpen(false)}
+              onMouseEnter={() => setIsServicesOpen(true)}
+              onMouseLeave={() => setIsServicesOpen(false)}
             >
               <button className={`flex items-center gap-1 text-sm font-medium transition-colors ${pathname.startsWith('/features') ? "text-teal-600 font-bold" : "text-gray-600 hover:text-teal-600"}`}>
-                Features
-                <ChevronDown className={`w-4 h-4 transition-transform ${isFeaturesOpen ? "rotate-180" : ""}`} />
+                Services
+                <ChevronDown className={`w-4 h-4 transition-transform ${isServicesOpen ? "rotate-180" : ""}`} />
               </button>
 
-              {isFeaturesOpen && (
+              {isServicesOpen && (
                 <div className="absolute top-full -left-16 pt-4 w-[600px] animate-in fade-in slide-in-from-top-2 duration-200">
                   <div className="bg-white border border-gray-100 shadow-2xl rounded-xl p-6 grid grid-cols-3 gap-6">
-                    {featureCategories.map((category, idx) => (
+                    {serviceCategories.map((category, idx) => (
                       <div key={idx} className="space-y-3">
                         <h4 className="font-bold text-xs uppercase tracking-wider text-gray-400 flex items-center gap-2">
                           {category.icon} {category.title}
@@ -123,10 +123,10 @@ const Header = () => {
                         </div>
                       </div>
                     ))}
-                    {/* View All Link at Bottom */}
+                    {/* View All Link */}
                     <div className="col-span-3 border-t border-gray-100 pt-3 mt-1 text-center">
                         <Link href="/features" className="text-xs font-bold text-teal-600 hover:text-teal-700 flex items-center justify-center gap-1">
-                            View All Features Overview <ChevronRight className="w-3 h-3"/>
+                            Explore All Services <ChevronRight className="w-3 h-3"/>
                         </Link>
                     </div>
                   </div>
@@ -134,7 +134,7 @@ const Header = () => {
               )}
             </div>
 
-            {/* Services Dropdown */}
+            {/* OLD SERVICES DROPDOWN - COMMENTED OUT
             <div 
               className="relative group"
               onMouseEnter={() => setIsServicesOpen(true)}
@@ -144,11 +144,10 @@ const Header = () => {
                 Services
                 <ChevronDown className={`w-4 h-4 transition-transform ${isServicesOpen ? "rotate-180" : ""}`} />
               </button>
-
               {isServicesOpen && (
                 <div className="absolute top-full -left-4 pt-4 w-56 animate-in fade-in slide-in-from-top-2 duration-200">
                   <div className="bg-white border border-gray-100 shadow-xl rounded-xl p-2">
-                    {serviceLinks.map((subLink) => (
+                    {oldServiceLinks.map((subLink) => (
                       <Link
                         key={subLink.name}
                         href={subLink.href}
@@ -161,6 +160,7 @@ const Header = () => {
                 </div>
               )}
             </div>
+            */}
 
             <Link href="/contact" className={`text-sm font-medium transition-colors ${pathname === "/contact" ? "text-teal-600 font-bold" : "text-gray-600 hover:text-teal-600"}`}>
               Contact
@@ -195,10 +195,10 @@ const Header = () => {
               </Link>
             ))}
 
-            {/* Mobile Features Section */}
+            {/* Mobile Services Section (Formerly Features) */}
              <div className="px-4 py-3 bg-slate-50 rounded-lg my-2">
-              <p className="text-xs font-bold text-teal-600 uppercase tracking-wider mb-3">Explore Features</p>
-              {featureCategories.map((category, idx) => (
+              <p className="text-xs font-bold text-teal-600 uppercase tracking-wider mb-3">Our Services</p>
+              {serviceCategories.map((category, idx) => (
                   <div key={idx} className="mb-4 last:mb-0">
                       <h5 className="text-xs font-semibold text-gray-400 mb-2 flex items-center gap-2">{category.icon} {category.title}</h5>
                       <div className="pl-2 border-l-2 border-gray-200 space-y-2">
@@ -215,18 +215,19 @@ const Header = () => {
                       </div>
                   </div>
               ))}
-              <Link href="/features" className="block text-center text-xs font-bold text-teal-600 mt-2 py-2 border border-teal-200 rounded-md bg-white">View Main Feature Page</Link>
+              <Link href="/features" className="block text-center text-xs font-bold text-teal-600 mt-2 py-2 border border-teal-200 rounded-md bg-white">View All Services</Link>
             </div>
             
-            {/* Mobile Services Section */}
+            {/* OLD Mobile Services Section - COMMENTED OUT
             <div className="px-4 py-2">
-              <p className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Our Services</p>
-              {serviceLinks.map((subLink) => (
+              <p className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Old Services</p>
+              {oldServiceLinks.map((subLink) => (
                 <Link key={subLink.name} href={subLink.href} className="block py-3 text-gray-700 border-l-2 border-transparent hover:border-teal-600 hover:pl-2 transition-all" onClick={() => setIsMobileMenuOpen(false)}>
                   {subLink.name}
                 </Link>
               ))}
             </div>
+            */}
 
             <Link href="/contact" className="text-base font-medium px-4 py-3 rounded-lg text-gray-700" onClick={() => setIsMobileMenuOpen(false)}>Contact</Link>
 

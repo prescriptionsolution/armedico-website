@@ -147,18 +147,18 @@ export default function SmartPrescriptionPage() {
               <h1 className="text-5xl lg:text-7xl font-extrabold leading-tight">
                 Prescribe Faster <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-blue-600">
-                  Diagnose Better — with AI Assistance
+                  Diagnose Better — with Intelligent Assistance
                 </span>
               </h1>
 
               <p className="text-xl text-slate-600 max-w-xl">
-                Create error-free digital prescriptions with AI assistance —
-                designed for everyday clinics, not just the future.
+                Create error-free digital prescriptions with AI assistance.
+                Designed for real-world clinics, not just theory.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
-                  href="/signup"
+                  href="https://dashboard.armedico.com/signup"
                   className="inline-flex items-center justify-center px-8 py-4 bg-teal-600 text-white font-bold rounded-xl hover:bg-teal-700 shadow-lg shadow-teal-500/30 transition"
                 >
                   Start Free Trial <ArrowRight className="ml-2 w-5 h-5" />
@@ -257,8 +257,9 @@ export default function SmartPrescriptionPage() {
         <div className="container mx-auto px-4">
             <div className="text-center max-w-3xl mx-auto mb-16">
                 <h2 className="text-sm font-bold text-teal-600 uppercase tracking-widest mb-3">Why Upgrade?</h2>
-                <h3 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Leave the Pen & Paper Behind</h3>
-                <p className="text-slate-600 text-lg">Traditional prescriptions are prone to errors, hard to read, and difficult to manage. ARmedico transforms your workflow.</p>
+                <h3 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Upgrade from Paper to Smart Prescriptions</h3>
+                <p className="text-slate-600 text-lg">Manual prescriptions are hard to track, easy to misread, and time-consuming.
+AR Medico brings clarity, speed, and built-in safety to your workflow.</p>
             </div>
 
             <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -273,13 +274,13 @@ export default function SmartPrescriptionPage() {
                     </h4>
                     <ul className="space-y-4">
                       <li className="flex items-start gap-3 text-slate-600">
-                        <span className="text-red-500 text-xl">×</span> Hand-written errors increase patient risk.
+                        <span className="text-red-500 text-xl">×</span> Hand-written errors increase patient risk.Handwritten prescriptions can be unclear or misinterpreted 
                       </li>
                       <li className="flex items-start gap-3 text-slate-600">
-                        <span className="text-red-500 text-xl">×</span> No quick access to past medication history.
+                        <span className="text-red-500 text-xl">×</span> No structured access to patient medication history 
                       </li>
                       <li className="flex items-start gap-3 text-slate-600">
-                        <span className="text-red-500 text-xl">×</span> Time wasted on repetitive manual writing.
+                        <span className="text-red-500 text-xl">×</span> Time wasted on repetitive manual writing  
                       </li>
                     </ul>
 
@@ -297,15 +298,15 @@ export default function SmartPrescriptionPage() {
                     <ul className="space-y-4">
                         <li className="flex items-start gap-3 text-slate-700 font-medium">
                             <CheckCircle2 className="w-5 h-5 text-teal-500 mt-0.5 flex-shrink-0" /> 
-                            AI-assisted suggestions prevent errors.
+                           Digital patient records with prescription history
                         </li>
                         <li className="flex items-start gap-3 text-slate-700 font-medium">
                             <CheckCircle2 className="w-5 h-5 text-teal-500 mt-0.5 flex-shrink-0" /> 
-                            One-click repeat prescriptions.
+                            Built-in drug–drug and drug–food interaction alerts  
                         </li>
                         <li className="flex items-start gap-3 text-slate-700 font-medium">
                             <CheckCircle2 className="w-5 h-5 text-teal-500 mt-0.5 flex-shrink-0" /> 
-                            Professional, branded printouts.
+                           Professional, structured, and branded prescriptions  
                         </li>
                     </ul>
                 </div>
@@ -317,7 +318,7 @@ export default function SmartPrescriptionPage() {
       <section className="py-24 bg-slate-50">
         <div className="container mx-auto px-4">
             <div className="mb-12">
-                <h2 className="text-4xl font-bold text-slate-900 mb-4">Everything you need to <br/> prescribe efficiently.</h2>
+                <h2 className="text-4xl font-bold text-slate-900 mb-4">Everything You Need <br/> for Smart Prescribing</h2>
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -326,8 +327,7 @@ export default function SmartPrescriptionPage() {
                     <div className="flex justify-between items-start mb-6">
                         <div>
                             <h3 className="text-2xl font-bold text-slate-800 mb-2">Medicine Interaction Checker</h3>
-                            <p className="text-slate-500">Automatically warns you about severe drug interactions
-                            before you finalize the prescription.</p>
+                            <p className="text-slate-500">Get real-time alerts for drug–drug and drug–food interactions before finalizing prescriptions.</p>
                         </div>
                         <div className="p-3 bg-purple-100 text-purple-600 rounded-xl group-hover:scale-110 transition-transform">
                             <Activity className="w-8 h-8" />
@@ -353,7 +353,8 @@ export default function SmartPrescriptionPage() {
                             <Share2 className="w-6 h-6 text-teal-400" />
                         </div>
                         <h3 className="text-2xl font-bold mb-2">Share via WhatsApp</h3>
-                        <p className="text-slate-300">Don't just print. Send digital prescriptions directly to patients' phones instantly — clear, readable, and easy to store.</p>
+                        <p className="text-slate-300"> 
+Send digital prescriptions instantly to patients via WhatsApp — clear, secure, and easy to access anytime.</p>
                      </div>
                 </div>
 
@@ -365,7 +366,7 @@ export default function SmartPrescriptionPage() {
                         </div>
                         <h3 className="text-xl font-bold text-slate-800">20k+ Medicines Database</h3>
                     </div>
-                    <p className="text-slate-500 text-sm">Pre-loaded Indian drug database with brands, generics, and dosages.</p>
+                    <p className="text-slate-500 text-sm">Access a comprehensive Indian drug database with brands, generics, dosages, and formulations.</p>
                 </div>
 
                 {/* Small Feature */}
@@ -374,9 +375,9 @@ export default function SmartPrescriptionPage() {
                         <div className="p-3 bg-teal-100 text-teal-600 rounded-xl">
                             <Zap className="w-6 h-6" />
                         </div>
-                        <h3 className="text-xl font-bold text-slate-800">Favorites & Sets</h3>
+                        <h3 className="text-xl font-bold text-slate-800">Quick Presets & Favorites</h3>
                     </div>
-                    <p className="text-slate-500 text-sm">One-click add for your most frequently prescribed combinations.</p>
+                    <p className="text-slate-500 text-sm">Save commonly used medicines and combinations for faster prescribing.</p>
                 </div>
             </div>
         </div>
@@ -387,12 +388,12 @@ export default function SmartPrescriptionPage() {
         <div className="container mx-auto px-4">
             <div className="flex flex-col lg:flex-row gap-12 items-center">
                 <div className="lg:w-1/2">
-                    <h2 className="text-3xl font-bold text-slate-900 mb-6">Designed for speed. <br/> Built for accuracy.</h2>
+                    <h2 className="text-3xl font-bold text-slate-900 mb-6">Prescribe Faster. <br/> Manage Smarter.</h2>
                     <div className="space-y-4">
                         {[
-                            {id: "templates", label: "Custom Templates", desc: "Build your own templates for cough, fever, diabetes etc."},
-                            {id: "history", label: "Patient History", desc: "View last 10 visits and repeat meds with one click."},
-                            {id: "billing", label: "Integrated Billing", desc: "Prescription automatically generates the bill invoice."}
+                            {id: "custom", label: "Custom Prescription Designs", desc: "Add your clinic logo, header, and footer to create professional, branded prescriptions."},
+                            {id: "history", label: "Smart Patient History", desc: "Instantly access past visits, diagnoses, and prescriptions — with one-click repeat for faster consultations."},
+                            {id: "billing", label: "Integrated Billing", desc: "Generate invoices directly from prescriptions — no extra steps, no manual entry."}
                         ].map((tab) => (
                             <button 
                                 key={tab.id}
@@ -421,8 +422,8 @@ export default function SmartPrescriptionPage() {
                             />
                             {/* Overlay Text to simulate UI change */}
                             <div className="absolute bottom-6 left-6 bg-white/90 backdrop-blur px-6 py-3 rounded-xl shadow-lg">
-                                <p className="font-bold text-slate-800 uppercase text-xs tracking-wider">Previewing Feature</p>
-                                <p className="text-teal-600 font-bold text-lg capitalize">{activeTab.replace('-', ' ')} Mode</p>
+                                <p className="font-bold text-slate-800 uppercase text-xs tracking-wider">Live Prescription Workflow</p>
+                                <p className="text-teal-600 font-bold text-lg capitalize">{activeTab.replace('-', ' ')} Templates Mode Active</p>
                             </div>
                         </div>
                     </div>
@@ -577,11 +578,11 @@ export default function SmartPrescriptionPage() {
                     <h2 className="text-4xl md:text-5xl font-bold text-white">Ready to modernize your clinic?</h2>
                     <p className="text-teal-100 text-lg">Join 10,000+ doctors who trust ARmedico for their daily practice. No credit card required for trial.</p>
                     <div className="flex flex-col sm:flex-row justify-center gap-4">
-                        <Link href="/signup" className="px-10 py-4 bg-white text-teal-700 font-bold rounded-xl text-lg hover:bg-teal-50 shadow-lg transition-transform hover:scale-105">
-                            Get Started Free
+                        <Link href="https://dashboard.armedico.com/signup" className="px-10 py-4 bg-white text-teal-700 font-bold rounded-xl text-lg hover:bg-teal-50 shadow-lg transition-transform hover:scale-105">
+                            Start Free Trial
                         </Link>
                         <Link href="/contact" className="px-10 py-4 bg-teal-700/50 text-white border border-teal-400 font-bold rounded-xl text-lg hover:bg-teal-700/70 transition-transform hover:scale-105 backdrop-blur-sm">
-                            Contact Sales
+                           Talk To Us
                         </Link>
                     </div>
                     <p className="text-sm text-teal-200/80 mt-4">Full access to Prescription module • No hidden fees</p>
