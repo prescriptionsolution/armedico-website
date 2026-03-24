@@ -34,7 +34,7 @@ const staggerContainer: Variants = {
 export default function Home() {
 
   const handleComingSoon = () => {
-    alert("Our Desktop Software and Mobile App are coming soon! Stay tuned.");
+    alert("Our Mobile App is coming soon! Stay tuned.");
   };
 
   return (
@@ -69,7 +69,7 @@ export default function Home() {
 
               <p className="text-base md:text-lg text-slate-200 leading-relaxed max-w-lg border-l-4 border-teal-500 pl-4">
                 A unified platform connecting Hospitals, Clinics, and Patients.
-                From Smart Prescriptions to Medicine Delivery.
+                From Smart Prescriptions to Complete Healthcare Management
               </p>
 
               <div className="flex flex-wrap gap-4 pt-2">
@@ -121,7 +121,7 @@ export default function Home() {
             <motion.div variants={fadeInUpScroll} className="md:w-1/2 w-full">
               <div className="relative h-[300px] lg:h-[380px] w-full rounded-2xl overflow-hidden shadow-xl border-4 border-white">
                 <Image
-                  src="/arabout.jpg"
+                  src="/aboutus.png"
                   alt="About AR Medico"
                   fill
                   className="object-cover hover:scale-105 transition-transform duration-700"
@@ -132,11 +132,11 @@ export default function Home() {
 
             <motion.div variants={fadeInUpScroll} className="md:w-1/2 w-full space-y-4">
               <span className="text-teal-600 font-bold uppercase tracking-widest text-xs bg-teal-100 px-3 py-1 rounded-full w-fit">Who We Are</span>
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900">
+              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mt-2">
                 Bridging Care with <br /> Intelligence
               </h2>
               <p className="text-slate-600 text-base leading-relaxed">
-                AR Medico is an all-in-one health-tech solution designed to simplify medical management. Whether you are a large hospital, a private clinic, or a patient seeking care, our platform adapts to your needs.
+                AR Medico is an all-in-one health-tech platform designed to simplify clinical workflows and digital prescription management. Whether you are a large hospital, a private clinic, or a patient seeking care, our system streamlines patient records, prescriptions, and day-to-day healthcare operations.
               </p>
               <div className="pt-2">
                 <Link href="/about" className="text-teal-600 font-bold flex items-center gap-2 hover:gap-4 transition-all group w-fit">
@@ -173,8 +173,9 @@ export default function Home() {
             <ServiceCard 
                icon={<Layout size={28} />}
                title="Hospitals"
-               category="Healthcare Provider"
-               desc="Complete admin control for multi-specialty centers. Manage departments and billing."
+               category="HOSPITAL MANAGEMENT"
+               desc="Complete control for multi-specialty centers.
+Manage departments, doctors, and patient records."
                link="/services/healthcare-provider"
                color="teal"
             />
@@ -182,8 +183,9 @@ export default function Home() {
             <ServiceCard 
                icon={<Stethoscope size={28} />}
                title="Clinics"
-               category="Healthcare Provider"
-               desc="Optimized for private practice. Streamlined appointments and digital prescriptions."
+               category="CLINIC MANAGEMENT"
+               desc="Optimized for private practice.
+Manage appointments, patients, and digital prescriptions."
                link="/services/healthcare-provider"
                color="blue"
             />
@@ -191,8 +193,9 @@ export default function Home() {
             <ServiceCard 
                icon={<Pill size={28} />}
                title="Patients"
-               category="Order Medicine"
-               desc="Manage family health records, order medicines online, and download prescriptions."
+               category="PATIENT ACCESS"
+               desc="Access digital prescriptions and health records.
+View and manage medical history easily."
                link="/services/order-medicine"
                color="purple"
             />
@@ -233,7 +236,7 @@ export default function Home() {
               icon={<BarChart3 className="text-white" size={24} />}
               color="bg-blue-600"
               title="Growth & Business"
-              items={["Advanced Analytics", "Billing & Finance", "Marketing Tools", "Education Hub"]}
+              items={["Billing & Subscription", "Clinic Insights", "Usage Tracking", "Performance Overview"]}
               link="/features"
             />
           </div>
@@ -248,17 +251,17 @@ export default function Home() {
         </div>
 
         <div className="container mx-auto px-6 relative z-10 text-center text-white">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to <span className="text-teal-400">Digitalize Your Practice?</span></h2>
-          <p className="text-lg text-slate-300 mb-8">Our web platform is live! Join ARmedico today.</p>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to <span className="text-teal-400">Digitize Your Practice?</span></h2>
+          <p className="text-lg text-slate-300 mb-8">Start creating digital prescriptions and managing patients seamlessly with AR Medico.</p>
           
           <div className="flex flex-wrap justify-center gap-4">
             <Link href="https://dashboard.armedico.com/">
               <button className="px-8 py-4 bg-teal-500 hover:bg-teal-400 text-white font-bold rounded-full flex items-center gap-2">
-                <Layout size={20} /> Start Web Now
+                <Layout size={20} /> Get Started on Web
               </button>
             </Link>
             <button onClick={handleComingSoon} className="px-8 py-4 border border-slate-600 hover:border-white text-white rounded-full flex items-center gap-2">
-              <Monitor size={20} /> Desktop App
+              <Smartphone size={18} /> Mobile App
             </button>
           </div>
         </div>
@@ -270,25 +273,62 @@ export default function Home() {
 // Reusable Service Card to clean up code
 function ServiceCard({ icon, title, category, desc, link, color }: any) {
   const colors: any = {
-    teal: "text-teal-600 bg-teal-50 hover:bg-teal-500",
-    blue: "text-blue-600 bg-blue-50 hover:bg-blue-500",
-    purple: "text-purple-600 bg-purple-50 hover:bg-purple-500"
+    teal: `
+      text-teal-600 bg-teal-50 
+      group-hover:bg-teal-500 group-hover:text-white
+      group-active:bg-teal-500 group-active:text-white
+    `,
+    blue: `
+      text-blue-600 bg-blue-50 
+      group-hover:bg-blue-500 group-hover:text-white
+      group-active:bg-blue-500 group-active:text-white
+    `,
+    purple: `
+      text-purple-600 bg-purple-50 
+      group-hover:bg-purple-500 group-hover:text-white
+      group-active:bg-purple-500 group-active:text-white
+    `
   };
+
   return (
-    <motion.div variants={fadeInUpScroll} className="p-6 bg-white rounded-2xl border border-slate-100 shadow-md hover:shadow-xl transition-all group">
-      <div className={`w-14 h-14 rounded-xl flex items-center justify-center mb-6 transition-colors ${colors[color]} group-hover:text-white`}>
+    <motion.div
+      variants={fadeInUpScroll}
+      className="
+        p-6 bg-white rounded-2xl border border-slate-100 
+        shadow-md hover:shadow-xl transition-all 
+        group cursor-pointer
+        active:scale-[0.98]
+      "
+    >
+      <div
+        className={`
+          w-14 h-14 rounded-xl flex items-center justify-center mb-6 
+          transition-all duration-300
+          ${colors[color]}
+        `}
+      >
         {icon}
       </div>
+
       <h3 className="text-xl font-bold mb-1">{title}</h3>
-      <p className="text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-3">{category}</p>
-      <p className="text-slate-600 text-sm mb-4 leading-relaxed">{desc}</p>
-      <Link href={link} className="flex items-center gap-2 text-sm font-bold text-teal-600">
+
+      <p className="text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-3">
+        {category}
+      </p>
+
+      <p className="text-slate-600 text-sm mb-4 leading-relaxed">
+        {desc}
+      </p>
+
+      <Link
+        href={link}
+        className="flex items-center gap-2 text-sm font-bold text-teal-600"
+      >
         Explore <ArrowRight size={14} />
       </Link>
     </motion.div>
   );
 }
-
 function FeatureCategoryCard({ icon, color, title, items, link }: any) {
   let textClass = color.replace('bg-', 'text-');
   return (
